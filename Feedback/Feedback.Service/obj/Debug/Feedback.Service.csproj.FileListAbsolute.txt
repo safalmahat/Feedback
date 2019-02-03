@@ -1,0 +1,6 @@
+D:\NeoSphare\Feedback\Feedback.Service\bin\Debug\Feedback.Service.dll
+D:\NeoSphare\Feedback\Feedback.Service\bin\Debug\Feedback.Service.pdb
+D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csprojAssemblyReference.cache
+D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csproj.CoreCompileInputs.cache
+D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.dll
+D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.pdb
