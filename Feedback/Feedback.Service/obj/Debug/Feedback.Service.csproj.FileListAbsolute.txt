@@ -4,3 +4,15 @@ D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csprojAssembly
 D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csproj.CoreCompileInputs.cache
 D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.dll
 D:\NeoSphare\Feedback\Feedback.Service\obj\Debug\Feedback.Service.pdb
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\Feedback.Service.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\Feedback.Service.pdb
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\Feedback.DAL.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\EntityFramework.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\Feedback.DAL.pdb
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\Feedback.DAL.dll.config
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\bin\Debug\EntityFramework.xml
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csprojAssemblyReference.cache
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csproj.CoreCompileInputs.cache
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\obj\Debug\Feedback.Service.csproj.CopyComplete
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\obj\Debug\Feedback.Service.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.Service\obj\Debug\Feedback.Service.pdb
