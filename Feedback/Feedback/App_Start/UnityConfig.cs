@@ -45,6 +45,9 @@ namespace Feedback
             // TODO: Register your type's mappings here.
             container.RegisterType<IUserService, UserService>();
             container.RegisterType<IUserRepo, UserRepo>();
+            container.RegisterType<ICourseRepo, CourseInfoRepo>();
+            container.RegisterType<ICourseInfoService, CourseInfoService>();
+
         }
     }
 }
