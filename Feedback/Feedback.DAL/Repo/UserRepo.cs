@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Feedback.DAL.Repo
 {
-  public  class UserRepo
+    public interface IUserRepo
+    {
+        List<UserInfo> GetAllUser();
+        bool Insert();
+    }
+  public  class UserRepo: IUserRepo
     {
 
         public List<UserInfo> GetAllUser()
@@ -18,6 +23,11 @@ namespace Feedback.DAL.Repo
                 lst = _entities.UserInfoes.Include("UserRole").ToList();
             }
             return lst;
+        }
+        public  bool Insert()
+        {
+            //TOD: insert code
+            return true;
         }
     }
 }

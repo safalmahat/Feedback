@@ -1,3 +1,4 @@
+using Feedback.DAL.Repo;
 using Feedback.Service.Service;
 using System;
 
@@ -43,6 +44,7 @@ namespace Feedback
 
             // TODO: Register your type's mappings here.
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IUserRepo, UserRepo>();
         }
     }
 }

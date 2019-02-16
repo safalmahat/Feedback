@@ -11,17 +11,22 @@ namespace Feedback.Service.Service
     public interface IUserService
     {
         List<UserInfo> GetAllUser();
+        bool Insert();
     }
     public class UserService: IUserService
     {
-        private UserRepo _userRepo;
-        public UserService()
+        private IUserRepo _userRepo;
+        public UserService(IUserRepo userRepo)
         {
-            _userRepo = new UserRepo();
+            _userRepo = userRepo;
         }
         public List<UserInfo> GetAllUser()
         {
             return _userRepo.GetAllUser();
+        }
+        public bool Insert()
+        {
+            return _userRepo.Insert();
         }
     }
 }

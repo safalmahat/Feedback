@@ -18,5 +18,10 @@ namespace Feedback.Controllers
         {
             return View(_userService.GetAllUser());
         }
+        public ActionResult Insert()
+        {
+            _userService.Insert();
+            return View();
+        }
     }
 }
