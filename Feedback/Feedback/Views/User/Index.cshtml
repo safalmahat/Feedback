@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    List<string> rigths = (List<string>)Session["rights"];
+ }
 <hr />
 <table class="table table-striped">
     <tr>
@@ -31,7 +32,10 @@
         <td>@item.UserRole.Name</td>
         <td>
             <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
-            <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+            @if (rigths.Contains("edit.course"))
+            {
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+            }
             <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
         </td>
     </tr>

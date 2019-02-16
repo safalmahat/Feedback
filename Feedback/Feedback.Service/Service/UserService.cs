@@ -12,6 +12,8 @@ namespace Feedback.Service.Service
     {
         List<UserInfo> GetAllUser();
         bool Insert();
+        UserInfo Login(string userName, string password);
+        List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId);
     }
     public class UserService: IUserService
     {
@@ -27,6 +29,14 @@ namespace Feedback.Service.Service
         public bool Insert()
         {
             return _userRepo.Insert();
+        }
+        public UserInfo Login(string userName, string password)
+        {
+            return _userRepo.Login(userName, password);
+        }
+        public List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId)
+        {
+            return _userRepo.GetRightsByRoleId(roleId);
         }
     }
 }

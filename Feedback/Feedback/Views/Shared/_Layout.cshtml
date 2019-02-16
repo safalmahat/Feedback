@@ -7,6 +7,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+@{ 
+    List<string> rights =(List<string>)Session["rights"];
+}
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -20,10 +23,24 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("User", "Index", "User")</li>
-                    <li>@Html.ActionLink("Course Info", "Index", "Course")</li>
+                    @if (Session["rights"] != null)
+                    {
+
+                        if (rights.Contains("menu.course"))
+                        {
+                            <li>@Html.ActionLink("Course Info", "Index", "Course")</li>
+                        }
+                        if (rights.Contains("menu.user"))
+                        {
+                            <li>@Html.ActionLink("User", "Index", "User")</li>
+
+                        }
+                        if (rights.Contains("menu.feedback"))
+                        {
+                            <li>@Html.ActionLink("Feedback", "Index", "User")</li>
+
+                        }
+                    }
                 </ul>
             </div>
         </div>
