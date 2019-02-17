@@ -182,6 +182,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserRightController.cs" />
     <Compile Include="Global.asax.cs">
@@ -232,6 +233,7 @@
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\UserRight\Index.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
