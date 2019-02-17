@@ -16,3 +16,15 @@ D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.c
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CopyComplete
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.dll
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.pdb
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.dll.config
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.dll
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.pdb
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.dll
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.xml
+D:\neo.net\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\neo.net\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csprojAssemblyReference.cache
+D:\neo.net\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CoreCompileInputs.cache
+D:\neo.net\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CopyComplete
+D:\neo.net\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.dll
+D:\neo.net\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.pdb
