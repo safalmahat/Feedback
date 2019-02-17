@@ -43,6 +43,7 @@ namespace Feedback.Controllers
                 {
                     rights.Add(roleAndRight.RightInfo.Name);
                 }
+                
                 //store all rights in session
                 Session["rights"] = rights;
 
