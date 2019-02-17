@@ -2,3 +2,6 @@
 /Feedback/Feedback.DAL/obj
 /Feedback/Feedback/obj
 /Feedback/Feedback.Service/obj
+/Feedback/Feedback.DAL/bin
+/Feedback/Feedback.Service/bin
+/Feedback/Feedback/bin
