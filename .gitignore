@@ -1,1 +1,4 @@
 /Feedback/.vs/Feedback
+/Feedback/Feedback.DAL/obj
+/Feedback/Feedback/obj
+/Feedback/Feedback.Service/obj
