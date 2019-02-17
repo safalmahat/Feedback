@@ -100,6 +100,7 @@
     <Compile Include="Repo\CourseInfoRepo.cs" />
     <Compile Include="Repo\TeacherInfoRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
+    <Compile Include="Repo\UserRightRepo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
