@@ -16,3 +16,15 @@ D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.c
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CopyComplete
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.dll
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.pdb
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.dll.config
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.dll
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\Feedback.DAL.pdb
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.dll
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.xml
+E:\Project\Feedback\Feedback\Feedback.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csprojAssemblyReference.cache
+E:\Project\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CoreCompileInputs.cache
+E:\Project\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.csproj.CopyComplete
+E:\Project\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.dll
+E:\Project\Feedback\Feedback\Feedback.DAL\obj\Debug\Feedback.DAL.pdb
