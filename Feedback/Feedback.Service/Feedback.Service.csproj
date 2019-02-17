@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CourseInfoService.cs" />
+    <Compile Include="Service\RightInfoService.cs" />
     <Compile Include="Service\QuestionInfoService.cs" />
     <Compile Include="Service\UserService.cs" />
   </ItemGroup>

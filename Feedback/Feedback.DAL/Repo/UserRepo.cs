@@ -35,8 +35,7 @@ namespace Feedback.DAL.Repo
         {
             using (FeedBackEntities _entities = new FeedBackEntities())
             {
-               return _entities.UserInfoes.Where(x => x.UserName.Equals(userName) && x.Password.Equals(password)).SingleOrDefault();
-               
+               return _entities.UserInfoes.Where(x => x.UserName.Equals(userName) && x.Password.Equals(password)).SingleOrDefault();  
             }
         }
         public List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId)

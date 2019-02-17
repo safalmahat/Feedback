@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionInfoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserRightController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +232,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\UserRight\Index.cshtml" />
     <Content Include="Views\QuestionInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
