@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Feedback.DAL.Model;
+
 namespace Feedback.DAL.Repo
 {
     public interface IUserRightRepo
