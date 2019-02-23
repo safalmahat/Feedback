@@ -1,0 +1,73 @@
+﻿@model Feedback.DAL.Model.UserInfo
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<div class="panel panel-default" style="padding:10px;">
+    <form method="post">
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                @*<input type="text" class="form-control" id="Name" name="Name">*@
+                @Html.TextBoxFor(x=>x.Name,new {@class= "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Address" name="Address">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="Email" name="Email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Gender" name="Gender">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">UserName</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="UserName" name="UserName">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Password" name="Password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">User Type</label>
+            <div class="col-sm-10">
+                @*<select class="form-control" name="UserTypeId">
+                    @foreach (var item in  (List<Feedback.DAL.Model.UserRole>)ViewData["roles"])
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>*@
+                @Html.DropDownListFor(x=>x.UserTypeId, new SelectList(ViewData["roles"]), "Name", "Id"))
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-saved">Save</span></button>
+                <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-refresh">Reset</span></button>
+            </div>
+        </div>
+    </form>
+</div>

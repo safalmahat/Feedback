@@ -4,7 +4,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<string> rigths = (List<string>)Session["rights"];
 }
-   <h2>User Information</h2>
+<hr />
+<div class="container">
+    <div class="row search-form">
+        <fieldset class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-4">
+                        Name: <input type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        User Name: <input type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        Gender: <input type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        User Type: <input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <button class="btn btn-danger">Reset</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-success">Search</button>
+                </div>
+            </div>
+            
+        </fieldset>
+    </div>
+    <div class="row btn-add">
+        <a href="~/User/Add" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>
+    </div>
+</div>
+ 
     <table class="table table-striped">
         <tr>
             <td>Id</td>
@@ -48,3 +85,18 @@
             </tr>
         }
     </table>
+<style>
+    .btn-add{
+        margin:10px;
+    }
+    .search-form{
+        margin-top:-5px;
+        border:1px solid;
+    }
+        .search-form fieldset {
+            padding: 5px;
+            margin: 0;
+            border:1px solid;
+        }
+    
+</style>

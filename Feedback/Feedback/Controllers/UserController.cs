@@ -10,9 +10,11 @@ namespace Feedback.Controllers
     public class UserController : Controller
     {
         private IUserService _userService;
-        public UserController(IUserService userService)
+        private IUserRoleService _userRoleService;
+        public UserController(IUserService userService,IUserRoleService userRoleService)
         {
             _userService = userService;
+            _userRoleService = userRoleService;
         }
         // GET: User
         public ActionResult Index()
@@ -52,6 +54,20 @@ namespace Feedback.Controllers
 
            
             else
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Add()
+        {
+           
+            List<UserRole> lstRoles = _userRoleService.GetRoles();
+            ViewData["roles"] = lstRoles;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(UserInfo userInfo)
+        {
+         
             return View();
         }
     }

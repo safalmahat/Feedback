@@ -104,6 +104,7 @@
     <Compile Include="Repo\QuestionInfoRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRightRepo.cs" />
+    <Compile Include="Repo\UserRoleRepo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
