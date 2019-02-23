@@ -35,6 +35,18 @@
                             <li>@Html.ActionLink("User", "Index", "User")</li>
 
                         }
+                        if (rights.Contains("menu.teacher"))
+                        {
+                            <li>@Html.ActionLink("Teacher Info", "Index", "Teacher")</li>
+                        }
+                        if (rights.Contains("menu.teachercourse"))
+                        {
+                            <li>@Html.ActionLink("Teacher Course Info", "Index", "TeacherCourse")</li>
+                        }
+                        if (rights.Contains("menu.student"))
+                        {
+                            <li>@Html.ActionLink("Student Info", "Index", "Student")</li>
+                        }
                         if (rights.Contains("menu.feedback"))
                         {
                             <li>@Html.ActionLink("Feedback", "Index", "User")</li>
