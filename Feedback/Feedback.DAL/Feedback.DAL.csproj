@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\CourseInfoRepo.cs" />
+    <Compile Include="Repo\FeedbackInfoRepo.cs" />
     <Compile Include="Repo\StudentInfoRepo.cs" />
     <Compile Include="Repo\TeacherCourseInfoRepo.cs" />
     <Compile Include="Repo\TeacherInfoRepo.cs" />
@@ -113,7 +114,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Model\FeedbackModel.edmx.diagram">
       <DependentUpon>FeedbackModel.edmx</DependentUpon>
     </None>

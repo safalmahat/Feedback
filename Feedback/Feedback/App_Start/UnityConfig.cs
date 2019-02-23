@@ -45,18 +45,27 @@ namespace Feedback
             // TODO: Register your type's mappings here.
             container.RegisterType<IUserService, UserService>();
             container.RegisterType<IUserRepo, UserRepo>();
+
             container.RegisterType<ICourseRepo, CourseInfoRepo>();
             container.RegisterType<ICourseInfoService, CourseInfoService>();
+
             container.RegisterType<IUserRightRepo, UserRightRepo>();
             container.RegisterType<IRightInfoService, RightInfoService>();
+
             container.RegisterType<IQuestionInfoService, QuestionInfoService>();
             container.RegisterType<IQuestionRepo,QuestionInfoRepo>();
+
             container.RegisterType<ITeacherInfoRepo, TeacherInfoRepo>();
             container.RegisterType<ITeacherInfoService, TeacherInfoService>();
+
             container.RegisterType<IStudentInfoService, StudentInfoService>();
             container.RegisterType<IStudentInfoRepo, StudentInfoRepo>();
+
             container.RegisterType<ITeacherCourseInfoService, TeacherCourseInfoService>();
             container.RegisterType<ITeacherCourseInfoRepo, TeacherCourseInfoRepo>();
+
+            container.RegisterType<IFeedbackRepo, FeedbackInfoRepo>();
+            container.RegisterType<IFeedbackInfoService, FeedbackInfoService>();
 
         }
     }
