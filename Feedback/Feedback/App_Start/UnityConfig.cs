@@ -53,7 +53,8 @@ namespace Feedback
             container.RegisterType<IQuestionRepo,QuestionInfoRepo>();
             container.RegisterType<ITeacherInfoRepo, TeacherInfoRepo>();
             container.RegisterType<ITeacherInfoService, TeacherInfoService>();
-
+            container.RegisterType<IFeedbackRepo, FeedbackInfoRepo>();
+            container.RegisterType<IFeedbackInfoService, FeedbackInfoService>();
         }
     }
 }
