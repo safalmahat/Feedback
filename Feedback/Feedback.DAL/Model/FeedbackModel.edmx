@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FeedBackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FeedBackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CourseInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -250,19 +250,66 @@
             <End Role="UserInfo" EntitySet="UserInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FeedBackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FeedBackEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CourseInfoes" EntityType="FeedBackModel.CourseInfo" />
+          <EntitySet Name="FeedbackInfoes" EntityType="FeedBackModel.FeedbackInfo" />
+          <EntitySet Name="QuestionInfoes" EntityType="FeedBackModel.QuestionInfo" />
+          <EntitySet Name="RightInfoes" EntityType="FeedBackModel.RightInfo" />
+          <EntitySet Name="RoleAndRightsInfoes" EntityType="FeedBackModel.RoleAndRightsInfo" />
+          <EntitySet Name="StudentInfoes" EntityType="FeedBackModel.StudentInfo" />
+          <EntitySet Name="TeacherCourseInfoes" EntityType="FeedBackModel.TeacherCourseInfo" />
+          <EntitySet Name="TeacherInfoes" EntityType="FeedBackModel.TeacherInfo" />
+          <EntitySet Name="UserInfoes" EntityType="FeedBackModel.UserInfo" />
+          <EntitySet Name="UserRoles" EntityType="FeedBackModel.UserRole" />
+          <AssociationSet Name="FK__StudentIn__Cours__21B6055D" Association="FeedBackModel.FK__StudentIn__Cours__21B6055D">
+            <End Role="CourseInfo" EntitySet="CourseInfoes" />
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeacherCo__Cours__267ABA7A" Association="FeedBackModel.FK__TeacherCo__Cours__267ABA7A">
+            <End Role="CourseInfo" EntitySet="CourseInfoes" />
+            <End Role="TeacherCourseInfo" EntitySet="TeacherCourseInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedbackI__Quest__2B3F6F97" Association="FeedBackModel.FK__FeedbackI__Quest__2B3F6F97">
+            <End Role="QuestionInfo" EntitySet="QuestionInfoes" />
+            <End Role="FeedbackInfo" EntitySet="FeedbackInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FeedbackI__Stude__2C3393D0" Association="FeedBackModel.FK__FeedbackI__Stude__2C3393D0">
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+            <End Role="FeedbackInfo" EntitySet="FeedbackInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoleAndRi__Right__182C9B23" Association="FeedBackModel.FK__RoleAndRi__Right__182C9B23">
+            <End Role="RightInfo" EntitySet="RightInfoes" />
+            <End Role="RoleAndRightsInfo" EntitySet="RoleAndRightsInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoleAndRi__RoleI__173876EA" Association="FeedBackModel.FK__RoleAndRi__RoleI__173876EA">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="RoleAndRightsInfo" EntitySet="RoleAndRightsInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentIn__Teach__22AA2996" Association="FeedBackModel.FK__StudentIn__Teach__22AA2996">
+            <End Role="TeacherInfo" EntitySet="TeacherInfoes" />
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeacherCo__Teach__25869641" Association="FeedBackModel.FK__TeacherCo__Teach__25869641">
+            <End Role="TeacherInfo" EntitySet="TeacherInfoes" />
+            <End Role="TeacherCourseInfo" EntitySet="TeacherCourseInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserInfo__UserTy__1B0907CE" Association="FeedBackModel.FK__UserInfo__UserTy__1B0907CE">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="UserInfo" EntitySet="UserInfoes" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="CourseInfo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="StudentInfoes" Relationship="Self.FK__StudentIn__Cours__21B6055D" FromRole="CourseInfo" ToRole="StudentInfo" />
-          <NavigationProperty Name="TeacherCourseInfoes" Relationship="Self.FK__TeacherCo__Cours__267ABA7A" FromRole="CourseInfo" ToRole="TeacherCourseInfo" />
+          <NavigationProperty Name="StudentInfoes" Relationship="FeedBackModel.FK__StudentIn__Cours__21B6055D" FromRole="CourseInfo" ToRole="StudentInfo" />
+          <NavigationProperty Name="TeacherCourseInfoes" Relationship="FeedBackModel.FK__TeacherCo__Cours__267ABA7A" FromRole="CourseInfo" ToRole="TeacherCourseInfo" />
         </EntityType>
         <EntityType Name="FeedbackInfo">
           <Key>
@@ -273,8 +320,8 @@
           <Property Name="StudentId" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CreateBy" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="QuestionInfo" Relationship="Self.FK__FeedbackI__Quest__2B3F6F97" FromRole="FeedbackInfo" ToRole="QuestionInfo" />
-          <NavigationProperty Name="StudentInfo" Relationship="Self.FK__FeedbackI__Stude__2C3393D0" FromRole="FeedbackInfo" ToRole="StudentInfo" />
+          <NavigationProperty Name="QuestionInfo" Relationship="FeedBackModel.FK__FeedbackI__Quest__2B3F6F97" FromRole="FeedbackInfo" ToRole="QuestionInfo" />
+          <NavigationProperty Name="StudentInfo" Relationship="FeedBackModel.FK__FeedbackI__Stude__2C3393D0" FromRole="FeedbackInfo" ToRole="StudentInfo" />
         </EntityType>
         <EntityType Name="QuestionInfo">
           <Key>
@@ -282,7 +329,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="FeedbackInfoes" Relationship="Self.FK__FeedbackI__Quest__2B3F6F97" FromRole="QuestionInfo" ToRole="FeedbackInfo" />
+          <NavigationProperty Name="FeedbackInfoes" Relationship="FeedBackModel.FK__FeedbackI__Quest__2B3F6F97" FromRole="QuestionInfo" ToRole="FeedbackInfo" />
         </EntityType>
         <EntityType Name="RightInfo">
           <Key>
@@ -290,7 +337,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="RoleAndRightsInfoes" Relationship="Self.FK__RoleAndRi__Right__182C9B23" FromRole="RightInfo" ToRole="RoleAndRightsInfo" />
+          <NavigationProperty Name="RoleAndRightsInfoes" Relationship="FeedBackModel.FK__RoleAndRi__Right__182C9B23" FromRole="RightInfo" ToRole="RoleAndRightsInfo" />
         </EntityType>
         <EntityType Name="RoleAndRightsInfo">
           <Key>
@@ -299,8 +346,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleId" Type="Int32" />
           <Property Name="RightId" Type="Int32" />
-          <NavigationProperty Name="RightInfo" Relationship="Self.FK__RoleAndRi__Right__182C9B23" FromRole="RoleAndRightsInfo" ToRole="RightInfo" />
-          <NavigationProperty Name="UserRole" Relationship="Self.FK__RoleAndRi__RoleI__173876EA" FromRole="RoleAndRightsInfo" ToRole="UserRole" />
+          <NavigationProperty Name="RightInfo" Relationship="FeedBackModel.FK__RoleAndRi__Right__182C9B23" FromRole="RoleAndRightsInfo" ToRole="RightInfo" />
+          <NavigationProperty Name="UserRole" Relationship="FeedBackModel.FK__RoleAndRi__RoleI__173876EA" FromRole="RoleAndRightsInfo" ToRole="UserRole" />
         </EntityType>
         <EntityType Name="StudentInfo">
           <Key>
@@ -315,9 +362,9 @@
           <Property Name="CourseId" Type="Int32" />
           <Property Name="EnrolledDate" Type="DateTime" Precision="0" />
           <Property Name="TeacherId" Type="Int32" />
-          <NavigationProperty Name="CourseInfo" Relationship="Self.FK__StudentIn__Cours__21B6055D" FromRole="StudentInfo" ToRole="CourseInfo" />
-          <NavigationProperty Name="FeedbackInfoes" Relationship="Self.FK__FeedbackI__Stude__2C3393D0" FromRole="StudentInfo" ToRole="FeedbackInfo" />
-          <NavigationProperty Name="TeacherInfo" Relationship="Self.FK__StudentIn__Teach__22AA2996" FromRole="StudentInfo" ToRole="TeacherInfo" />
+          <NavigationProperty Name="CourseInfo" Relationship="FeedBackModel.FK__StudentIn__Cours__21B6055D" FromRole="StudentInfo" ToRole="CourseInfo" />
+          <NavigationProperty Name="FeedbackInfoes" Relationship="FeedBackModel.FK__FeedbackI__Stude__2C3393D0" FromRole="StudentInfo" ToRole="FeedbackInfo" />
+          <NavigationProperty Name="TeacherInfo" Relationship="FeedBackModel.FK__StudentIn__Teach__22AA2996" FromRole="StudentInfo" ToRole="TeacherInfo" />
         </EntityType>
         <EntityType Name="TeacherCourseInfo">
           <Key>
@@ -326,8 +373,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeacherId" Type="Int32" />
           <Property Name="CourseId" Type="Int32" />
-          <NavigationProperty Name="CourseInfo" Relationship="Self.FK__TeacherCo__Cours__267ABA7A" FromRole="TeacherCourseInfo" ToRole="CourseInfo" />
-          <NavigationProperty Name="TeacherInfo" Relationship="Self.FK__TeacherCo__Teach__25869641" FromRole="TeacherCourseInfo" ToRole="TeacherInfo" />
+          <NavigationProperty Name="CourseInfo" Relationship="FeedBackModel.FK__TeacherCo__Cours__267ABA7A" FromRole="TeacherCourseInfo" ToRole="CourseInfo" />
+          <NavigationProperty Name="TeacherInfo" Relationship="FeedBackModel.FK__TeacherCo__Teach__25869641" FromRole="TeacherCourseInfo" ToRole="TeacherInfo" />
         </EntityType>
         <EntityType Name="TeacherInfo">
           <Key>
@@ -335,8 +382,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="StudentInfoes" Relationship="Self.FK__StudentIn__Teach__22AA2996" FromRole="TeacherInfo" ToRole="StudentInfo" />
-          <NavigationProperty Name="TeacherCourseInfoes" Relationship="Self.FK__TeacherCo__Teach__25869641" FromRole="TeacherInfo" ToRole="TeacherCourseInfo" />
+          <NavigationProperty Name="StudentInfoes" Relationship="FeedBackModel.FK__StudentIn__Teach__22AA2996" FromRole="TeacherInfo" ToRole="StudentInfo" />
+          <NavigationProperty Name="TeacherCourseInfoes" Relationship="FeedBackModel.FK__TeacherCo__Teach__25869641" FromRole="TeacherInfo" ToRole="TeacherCourseInfo" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -351,7 +398,7 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserTypeId" Type="Int32" />
-          <NavigationProperty Name="UserRole" Relationship="Self.FK__UserInfo__UserTy__1B0907CE" FromRole="UserInfo" ToRole="UserRole" />
+          <NavigationProperty Name="UserRole" Relationship="FeedBackModel.FK__UserInfo__UserTy__1B0907CE" FromRole="UserInfo" ToRole="UserRole" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -359,12 +406,12 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="RoleAndRightsInfoes" Relationship="Self.FK__RoleAndRi__RoleI__173876EA" FromRole="UserRole" ToRole="RoleAndRightsInfo" />
-          <NavigationProperty Name="UserInfoes" Relationship="Self.FK__UserInfo__UserTy__1B0907CE" FromRole="UserRole" ToRole="UserInfo" />
+          <NavigationProperty Name="RoleAndRightsInfoes" Relationship="FeedBackModel.FK__RoleAndRi__RoleI__173876EA" FromRole="UserRole" ToRole="RoleAndRightsInfo" />
+          <NavigationProperty Name="UserInfoes" Relationship="FeedBackModel.FK__UserInfo__UserTy__1B0907CE" FromRole="UserRole" ToRole="UserInfo" />
         </EntityType>
         <Association Name="FK__StudentIn__Cours__21B6055D">
-          <End Role="CourseInfo" Type="Self.CourseInfo" Multiplicity="0..1" />
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.CourseInfo" Role="CourseInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.StudentInfo" Role="StudentInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CourseInfo">
               <PropertyRef Name="Id" />
@@ -375,8 +422,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__TeacherCo__Cours__267ABA7A">
-          <End Role="CourseInfo" Type="Self.CourseInfo" Multiplicity="0..1" />
-          <End Role="TeacherCourseInfo" Type="Self.TeacherCourseInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.CourseInfo" Role="CourseInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.TeacherCourseInfo" Role="TeacherCourseInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CourseInfo">
               <PropertyRef Name="Id" />
@@ -387,8 +434,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__FeedbackI__Quest__2B3F6F97">
-          <End Role="QuestionInfo" Type="Self.QuestionInfo" Multiplicity="0..1" />
-          <End Role="FeedbackInfo" Type="Self.FeedbackInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.QuestionInfo" Role="QuestionInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.FeedbackInfo" Role="FeedbackInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="QuestionInfo">
               <PropertyRef Name="Id" />
@@ -399,8 +446,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__FeedbackI__Stude__2C3393D0">
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="0..1" />
-          <End Role="FeedbackInfo" Type="Self.FeedbackInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.StudentInfo" Role="StudentInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.FeedbackInfo" Role="FeedbackInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StudentInfo">
               <PropertyRef Name="Id" />
@@ -411,8 +458,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RoleAndRi__Right__182C9B23">
-          <End Role="RightInfo" Type="Self.RightInfo" Multiplicity="0..1" />
-          <End Role="RoleAndRightsInfo" Type="Self.RoleAndRightsInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.RightInfo" Role="RightInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.RoleAndRightsInfo" Role="RoleAndRightsInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RightInfo">
               <PropertyRef Name="Id" />
@@ -423,8 +470,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RoleAndRi__RoleI__173876EA">
-          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
-          <End Role="RoleAndRightsInfo" Type="Self.RoleAndRightsInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.UserRole" Role="UserRole" Multiplicity="0..1" />
+          <End Type="FeedBackModel.RoleAndRightsInfo" Role="RoleAndRightsInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserRole">
               <PropertyRef Name="Id" />
@@ -435,8 +482,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__StudentIn__Teach__22AA2996">
-          <End Role="TeacherInfo" Type="Self.TeacherInfo" Multiplicity="0..1" />
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.TeacherInfo" Role="TeacherInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.StudentInfo" Role="StudentInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TeacherInfo">
               <PropertyRef Name="Id" />
@@ -447,8 +494,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__TeacherCo__Teach__25869641">
-          <End Role="TeacherInfo" Type="Self.TeacherInfo" Multiplicity="0..1" />
-          <End Role="TeacherCourseInfo" Type="Self.TeacherCourseInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.TeacherInfo" Role="TeacherInfo" Multiplicity="0..1" />
+          <End Type="FeedBackModel.TeacherCourseInfo" Role="TeacherCourseInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TeacherInfo">
               <PropertyRef Name="Id" />
@@ -459,8 +506,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UserInfo__UserTy__1B0907CE">
-          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
-          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+          <End Type="FeedBackModel.UserRole" Role="UserRole" Multiplicity="0..1" />
+          <End Type="FeedBackModel.UserInfo" Role="UserInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserRole">
               <PropertyRef Name="Id" />
@@ -470,54 +517,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FeedBackEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CourseInfoes" EntityType="Self.CourseInfo" />
-          <EntitySet Name="FeedbackInfoes" EntityType="Self.FeedbackInfo" />
-          <EntitySet Name="QuestionInfoes" EntityType="Self.QuestionInfo" />
-          <EntitySet Name="RightInfoes" EntityType="Self.RightInfo" />
-          <EntitySet Name="RoleAndRightsInfoes" EntityType="Self.RoleAndRightsInfo" />
-          <EntitySet Name="StudentInfoes" EntityType="Self.StudentInfo" />
-          <EntitySet Name="TeacherCourseInfoes" EntityType="Self.TeacherCourseInfo" />
-          <EntitySet Name="TeacherInfoes" EntityType="Self.TeacherInfo" />
-          <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
-          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
-          <AssociationSet Name="FK__StudentIn__Cours__21B6055D" Association="Self.FK__StudentIn__Cours__21B6055D">
-            <End Role="CourseInfo" EntitySet="CourseInfoes" />
-            <End Role="StudentInfo" EntitySet="StudentInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TeacherCo__Cours__267ABA7A" Association="Self.FK__TeacherCo__Cours__267ABA7A">
-            <End Role="CourseInfo" EntitySet="CourseInfoes" />
-            <End Role="TeacherCourseInfo" EntitySet="TeacherCourseInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FeedbackI__Quest__2B3F6F97" Association="Self.FK__FeedbackI__Quest__2B3F6F97">
-            <End Role="QuestionInfo" EntitySet="QuestionInfoes" />
-            <End Role="FeedbackInfo" EntitySet="FeedbackInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FeedbackI__Stude__2C3393D0" Association="Self.FK__FeedbackI__Stude__2C3393D0">
-            <End Role="StudentInfo" EntitySet="StudentInfoes" />
-            <End Role="FeedbackInfo" EntitySet="FeedbackInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__RoleAndRi__Right__182C9B23" Association="Self.FK__RoleAndRi__Right__182C9B23">
-            <End Role="RightInfo" EntitySet="RightInfoes" />
-            <End Role="RoleAndRightsInfo" EntitySet="RoleAndRightsInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__RoleAndRi__RoleI__173876EA" Association="Self.FK__RoleAndRi__RoleI__173876EA">
-            <End Role="UserRole" EntitySet="UserRoles" />
-            <End Role="RoleAndRightsInfo" EntitySet="RoleAndRightsInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__StudentIn__Teach__22AA2996" Association="Self.FK__StudentIn__Teach__22AA2996">
-            <End Role="TeacherInfo" EntitySet="TeacherInfoes" />
-            <End Role="StudentInfo" EntitySet="StudentInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TeacherCo__Teach__25869641" Association="Self.FK__TeacherCo__Teach__25869641">
-            <End Role="TeacherInfo" EntitySet="TeacherInfoes" />
-            <End Role="TeacherCourseInfo" EntitySet="TeacherCourseInfoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__UserInfo__UserTy__1B0907CE" Association="Self.FK__UserInfo__UserTy__1B0907CE">
-            <End Role="UserRole" EntitySet="UserRoles" />
-            <End Role="UserInfo" EntitySet="UserInfoes" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -527,99 +526,99 @@
           <EntitySetMapping Name="CourseInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.CourseInfo">
               <MappingFragment StoreEntitySet="CourseInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FeedbackInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.FeedbackInfo">
               <MappingFragment StoreEntitySet="FeedbackInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="QuestionInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.QuestionInfo">
               <MappingFragment StoreEntitySet="QuestionInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RightInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.RightInfo">
               <MappingFragment StoreEntitySet="RightInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RoleAndRightsInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.RoleAndRightsInfo">
               <MappingFragment StoreEntitySet="RoleAndRightsInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="RightId" ColumnName="RightId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StudentInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.StudentInfo">
               <MappingFragment StoreEntitySet="StudentInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-                <ScalarProperty Name="EnrolledDate" ColumnName="EnrolledDate" />
                 <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+                <ScalarProperty Name="EnrolledDate" ColumnName="EnrolledDate" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TeacherCourseInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.TeacherCourseInfo">
               <MappingFragment StoreEntitySet="TeacherCourseInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TeacherInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.TeacherInfo">
               <MappingFragment StoreEntitySet="TeacherInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.UserInfo">
               <MappingFragment StoreEntitySet="UserInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserRoles">
             <EntityTypeMapping TypeName="FeedBackModel.UserRole">
               <MappingFragment StoreEntitySet="UserRole">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

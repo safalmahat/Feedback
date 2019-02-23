@@ -84,6 +84,7 @@
     <Compile Include="Model\StudentInfo.cs">
       <DependentUpon>FeedbackModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\StudentMetaData.cs" />
     <Compile Include="Model\TeacherCourseInfo.cs">
       <DependentUpon>FeedbackModel.tt</DependentUpon>
     </Compile>

@@ -11,9 +11,9 @@ namespace Feedback.Service.Service
     public interface IUserService
     {
         List<UserInfo> GetAllUser();
-        bool Insert();
         UserInfo Login(string userName, string password);
         List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId);
+        bool Insert(UserInfo item);
     }
     public class UserService: IUserService
     {
@@ -26,10 +26,6 @@ namespace Feedback.Service.Service
         {
             return _userRepo.GetAllUser();
         }
-        public bool Insert()
-        {
-            return _userRepo.Insert();
-        }
         public UserInfo Login(string userName, string password)
         {
             return _userRepo.Login(userName, password);
@@ -37,6 +33,11 @@ namespace Feedback.Service.Service
         public List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId)
         {
             return _userRepo.GetRightsByRoleId(roleId);
+        }
+
+        public bool Insert(UserInfo item)
+        {
+            return _userRepo.Insert(item);
         }
     }
 }

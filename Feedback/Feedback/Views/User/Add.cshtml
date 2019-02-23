@@ -11,13 +11,15 @@
             <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
                 @*<input type="text" class="form-control" id="Name" name="Name">*@
-                @Html.TextBoxFor(x=>x.Name,new {@class= "form-control" })
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Name,null,new { @class= "text-danger" })
             </div>
         </div>
         <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="Address" name="Address">
+             
             </div>
         </div>
         <div class="form-group row">
@@ -42,6 +44,7 @@
             <label for="inputPassword" class="col-sm-2 col-form-label">UserName</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="UserName" name="UserName">
+                @Html.ValidationMessageFor(x => x.UserName, null, new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group row">
@@ -59,7 +62,7 @@
                         <option value="@item.Id">@item.Name</option>
                     }
                 </select>*@
-                @Html.DropDownListFor(x=>x.UserTypeId, new SelectList(ViewData["roles"]), "Name", "Id"))
+                @Html.DropDownListFor(x=>x.UserTypeId, ViewData["roles"] as SelectList, new { @class= "form-control" })
             </div>
         </div>
         <div class="form-group row">

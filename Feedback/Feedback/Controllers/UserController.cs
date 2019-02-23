@@ -21,11 +21,6 @@ namespace Feedback.Controllers
         {
             return View(_userService.GetAllUser());
         }
-        public ActionResult Insert()
-        {
-            _userService.Insert();
-            return View();
-        }
         [HttpGet]
         public ActionResult Login()
         {
@@ -61,14 +56,32 @@ namespace Feedback.Controllers
         {
            
             List<UserRole> lstRoles = _userRoleService.GetRoles();
-            ViewData["roles"] = lstRoles;
+            ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
             return View();
         }
         [HttpPost]
         public ActionResult Add(UserInfo userInfo)
         {
-         
-            return View();
+            if(ModelState.IsValid)
+            {
+                bool result = _userService.Insert(userInfo);
+                if (result)
+                    return RedirectToAction("Index");
+                else
+                {
+                    List<UserRole> lstRoles = _userRoleService.GetRoles();
+                    ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
+                    return View();
+                }
+            }
+            else
+            {
+
+                List<UserRole> lstRoles = _userRoleService.GetRoles();
+                ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
+                return View();
+            }
+
         }
     }
 }

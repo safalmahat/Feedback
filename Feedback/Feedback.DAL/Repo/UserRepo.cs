@@ -10,9 +10,9 @@ namespace Feedback.DAL.Repo
     public interface IUserRepo
     {
         List<UserInfo> GetAllUser();
-        bool Insert();
         UserInfo Login(string userName, string password);
         List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId);
+        bool Insert(UserInfo item);
     }
   public  class UserRepo: IUserRepo
     {
@@ -25,11 +25,6 @@ namespace Feedback.DAL.Repo
                 lst = _entities.UserInfoes.Include("UserRole").ToList();
             }
             return lst;
-        }
-        public  bool Insert()
-        {
-            //TOD: insert code
-            return true;
         }
         public UserInfo Login(string userName, string password)
         {
@@ -47,6 +42,20 @@ namespace Feedback.DAL.Repo
             }
             return lst;
         }
-            
+
+        public bool Insert(UserInfo item)
+        {
+            bool result;
+            using (FeedBackEntities _entities = new FeedBackEntities())
+            {
+                _entities.UserInfoes.Add(item);
+              int count=  _entities.SaveChanges();
+                if (count > 0)
+                    result = true;
+                else
+                    result = false;
+            }
+            return result;
+        }
     }
 }
