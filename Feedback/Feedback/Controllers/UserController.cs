@@ -10,19 +10,16 @@ namespace Feedback.Controllers
     public class UserController : Controller
     {
         private IUserService _userService;
-        public UserController(IUserService userService)
+        private IUserRoleService _userRoleService;
+        public UserController(IUserService userService,IUserRoleService userRoleService)
         {
             _userService = userService;
+            _userRoleService = userRoleService;
         }
         // GET: User
         public ActionResult Index()
         {
             return View(_userService.GetAllUser());
-        }
-        public ActionResult Insert()
-        {
-            _userService.Insert();
-            return View();
         }
         [HttpGet]
         public ActionResult Login()
@@ -53,6 +50,38 @@ namespace Feedback.Controllers
            
             else
             return View();
+        }
+        [HttpGet]
+        public ActionResult Add()
+        {
+           
+            List<UserRole> lstRoles = _userRoleService.GetRoles();
+            ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(UserInfo userInfo)
+        {
+            if(ModelState.IsValid)
+            {
+                bool result = _userService.Insert(userInfo);
+                if (result)
+                    return RedirectToAction("Index");
+                else
+                {
+                    List<UserRole> lstRoles = _userRoleService.GetRoles();
+                    ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
+                    return View();
+                }
+            }
+            else
+            {
+
+                List<UserRole> lstRoles = _userRoleService.GetRoles();
+                ViewData["roles"] = new SelectList(lstRoles, "Id", "Name");
+                return View();
+            }
+
         }
     }
 }

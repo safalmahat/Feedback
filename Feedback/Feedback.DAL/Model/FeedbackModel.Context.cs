@@ -16,7 +16,7 @@ namespace Feedback.DAL.Model
     public partial class FeedBackEntities : DbContext
     {
         public FeedBackEntities()
-            : base("FeedBackEntities")
+            : base("name=FeedBackEntities")
         {
         }
     

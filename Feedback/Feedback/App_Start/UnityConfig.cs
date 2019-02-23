@@ -63,6 +63,8 @@ namespace Feedback
 
             container.RegisterType<ITeacherCourseInfoService, TeacherCourseInfoService>();
             container.RegisterType<ITeacherCourseInfoRepo, TeacherCourseInfoRepo>();
+            container.RegisterType<IUserRoleRepo, UserRoleRepo>();
+            container.RegisterType<IUserRoleService, UserRoleService>();
 
             container.RegisterType<IFeedbackRepo, FeedbackInfoRepo>();
             container.RegisterType<IFeedbackInfoService, FeedbackInfoService>();

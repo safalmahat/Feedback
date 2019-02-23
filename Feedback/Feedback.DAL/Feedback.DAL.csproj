@@ -84,6 +84,7 @@
     <Compile Include="Model\StudentInfo.cs">
       <DependentUpon>FeedbackModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\StudentMetaData.cs" />
     <Compile Include="Model\TeacherCourseInfo.cs">
       <DependentUpon>FeedbackModel.tt</DependentUpon>
     </Compile>
@@ -105,6 +106,7 @@
     <Compile Include="Repo\QuestionInfoRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRightRepo.cs" />
+    <Compile Include="Repo\UserRoleRepo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

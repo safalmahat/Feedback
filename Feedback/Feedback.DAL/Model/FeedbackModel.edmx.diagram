@@ -5,25 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a54958332f8d4f6a878fdad87a7ad71f" Name="Diagram1">
-        <EntityTypeShape EntityType="FeedBackModel.CourseInfo" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.FeedbackInfo" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.QuestionInfo" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.RightInfo" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.RoleAndRightsInfo" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.StudentInfo" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.TeacherCourseInfo" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.TeacherInfo" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.UserInfo" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FeedBackModel.UserRole" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <AssociationConnector Association="FeedBackModel.FK__StudentIn__Cours__21B6055D" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__TeacherCo__Cours__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__FeedbackI__Quest__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__FeedbackI__Stude__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__RoleAndRi__Right__182C9B23" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__RoleAndRi__RoleI__173876EA" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__StudentIn__Teach__22AA2996" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__TeacherCo__Teach__25869641" ManuallyRouted="false" />
-        <AssociationConnector Association="FeedBackModel.FK__UserInfo__UserTy__1B0907CE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FeedBackModel.CourseInfo" Width="1.5" PointX="3.75" PointY="1.625" />
+        <EntityTypeShape EntityType="FeedBackModel.FeedbackInfo" Width="1.5" PointX="8.25" PointY="4.375" />
+        <EntityTypeShape EntityType="FeedBackModel.QuestionInfo" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="FeedBackModel.RightInfo" Width="1.5" PointX="3.75" PointY="14.5" />
+        <EntityTypeShape EntityType="FeedBackModel.RoleAndRightsInfo" Width="1.5" PointX="6" PointY="10.375" />
+        <EntityTypeShape EntityType="FeedBackModel.StudentInfo" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="FeedBackModel.TeacherCourseInfo" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="FeedBackModel.TeacherInfo" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="FeedBackModel.UserInfo" Width="1.5" PointX="3" PointY="9.875" />
+        <EntityTypeShape EntityType="FeedBackModel.UserRole" Width="1.5" PointX="0.75" PointY="10.5" />
+        <AssociationConnector Association="FeedBackModel.FK__StudentIn__Cours__21B6055D" />
+        <AssociationConnector Association="FeedBackModel.FK__TeacherCo__Cours__267ABA7A" />
+        <AssociationConnector Association="FeedBackModel.FK__FeedbackI__Quest__2B3F6F97" />
+        <AssociationConnector Association="FeedBackModel.FK__FeedbackI__Stude__2C3393D0" />
+        <AssociationConnector Association="FeedBackModel.FK__RoleAndRi__Right__182C9B23" />
+        <AssociationConnector Association="FeedBackModel.FK__RoleAndRi__RoleI__173876EA" />
+        <AssociationConnector Association="FeedBackModel.FK__StudentIn__Teach__22AA2996" />
+        <AssociationConnector Association="FeedBackModel.FK__TeacherCo__Teach__25869641" />
+        <AssociationConnector Association="FeedBackModel.FK__UserInfo__UserTy__1B0907CE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
