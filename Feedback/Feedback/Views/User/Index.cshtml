@@ -3,41 +3,48 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<string> rigths = (List<string>)Session["rights"];
- }
-<hr />
-<table class="table table-striped">
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Address</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Gender</td>
-        <td>User Name</td>
-        <td>Password</td>
-        <td>User Type</td>
-        <td>Action</td>
-    </tr>
-    @foreach(var item in Model)
-    {
-    <tr>
-        <td>@item.Id</td>
-        <td>@item.Name</td>
-        <td>@item.Address</td>
-        <td>@item.PhoneNumber</td>
-        <td>@item.Email</td>
-        <td>@item.Gender</td>
-        <td>@item.UserName</td>
-        <td>@item.Password</td>
-        <td>@item.UserRole.Name</td>
-        <td>
-            <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
-            @if (rigths.Contains("edit.course"))
-            {
-                <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
-            }
-            <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-        </td>
-    </tr>
-    }
-</table>
+}
+   <h2>User Information</h2>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Phone Number</td>
+            <td>Email</td>
+            <td>Gender</td>
+            <td>User Name</td>
+            <td>Password</td>
+            <td>User Type</td>
+            <td>Action</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Email</td>
+                @if (item.Gender == true)
+                {
+                    <td>Male</td>
+                }
+                else
+                {
+                    <td>Female</td>
+                }
+                <td>@item.UserName</td>
+                <td>@item.Password</td>
+                <td>@item.UserRole.Name</td>
+                <td>
+                    <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
+                    @if (rigths.Contains("edit.course"))
+                    {
+                        <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+                    }
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                </td>
+            </tr>
+        }
+    </table>
