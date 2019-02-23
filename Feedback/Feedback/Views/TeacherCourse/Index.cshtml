@@ -1,0 +1,28 @@
+﻿@model List<Feedback.DAL.Model.TeacherCourseInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Teacher Course Information</h2>
+<table class="table table-striped">
+    <tr>
+        <td>Id</td>
+        <td>Teacher</td>
+        <td>Course</td>
+        <td>Action</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.TeacherInfo.Name</td>
+        <td>@item.CourseInfo.Name</td>
+        <td>
+            <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+            <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+        </td>
+    </tr>
+    }
+</table>
