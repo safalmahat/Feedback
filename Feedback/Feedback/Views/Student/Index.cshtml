@@ -5,48 +5,79 @@
 }
 
 <h2>Student Information</h2>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Address</td>
-            <td>Phone</td>
-            <td>Email</td>
-            <td>Gender</td>
-            <td>Course</td>
-            <td>Enroll Date</td>
-            <td>Teacher</td>
-            <td>Action</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Name</td>
-            <td>@item.Address</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Email</td>
-            @if (item.Gender == true)
+<div class="panel">
+    <div class="panel-body">
+        <div class="col-md-2 row-padding">
+            <span>Name:</span>
+            <input type="text" name="Name" style="width:109px" />
+        </div>
+        <div class="col-md-3 row-padding">
+            <span>UserName:</span>
+            <input type="text" name="UserName" style="width:112px" />
+        </div>
+        <div class="col-md-2 row-padding">
+            <span>Gender:</span>
+            <input type="text" name="Gender" style="width:100px" />
+        </div>
+        <div class="col-md-3 row-padding">
+            <span>UserType:</span>
+            <input type="text" name="UserType" style="width:120px" />
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-success">Search</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row btn-add">
+        <a href="~/Student/AddStudent" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Phone</td>
+                <td>Email</td>
+                <td>Gender</td>
+                <td>Course</td>
+                <td>Enroll Date</td>
+                <td>Teacher</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
             {
-                <td>Male</td>
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Email</td>
+                    @if (item.Gender == true)
+                    {
+                        <td>Male</td>
+                    }
+                    else
+                    {
+                        <td>Female</td>
+                    }
+                    <td>@item.CourseInfo.Name</td>
+                    <td>@item.EnrolledDate.Value.ToShortDateString()</td>
+                    <td>@item.TeacherInfo.Name</td>
+                    <td>
+                        <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
+                        <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+                        <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                    </td>
+                </tr>
             }
-            else
-            {
-                <td>Female</td>
-            }
-            <td>@item.CourseInfo.Name</td>
-            <td>@item.EnrolledDate.Value.ToShortDateString()</td>
-            <td>@item.TeacherInfo.Name</td>
-            <td>
-                <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
-                <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
-                <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
+</div>

@@ -11,6 +11,7 @@ namespace Feedback.Service.Service
     public interface IStudentInfoService
     {
         List<StudentInfo> GetAllStudentInfo();
+        bool insert(StudentInfo studentInfo);
     }
     public class StudentInfoService:IStudentInfoService
     {
@@ -26,5 +27,9 @@ namespace Feedback.Service.Service
             return _studentinforepo.GetAllStudentInfo();
         }
 
+        public bool insert(StudentInfo studentInfo)
+        {
+            return _studentinforepo.insert(studentInfo);
+        }
     }
 }

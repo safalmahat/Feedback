@@ -5,43 +5,36 @@
     List<string> rigths = (List<string>)Session["rights"];
 }
 <hr />
-<div class="container">
-    <div class="row search-form">
-        <fieldset class="row">
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-4">
-                        Name: <input type="text" />
-                    </div>
-                    <div class="col-md-4">
-                        User Name: <input type="text" />
-                    </div>
-                    <div class="col-md-4">
-                        Gender: <input type="text" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        User Type: <input type="text" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="row">
-                    <button class="btn btn-danger">Reset</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-success">Search</button>
-                </div>
-            </div>
-            
-        </fieldset>
-    </div>
-    <div class="row btn-add">
-        <a href="~/User/Add" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>
+<div class="panel">
+    <div class="panel-body">
+        <div class="col-md-2 row-padding">
+            <span>Name:</span>
+            <input type="text" name="Name" style="width:109px" />
+        </div>
+        <div class="col-md-3 row-padding">
+            <span>UserName:</span>
+            <input type="text" name="UserName" style="width:112px" />
+        </div>
+        <div class="col-md-2 row-padding">
+            <span>Gender:</span>
+            <input type="text" name="Gender" style="width:100px" />
+        </div>
+        <div class="col-md-3 row-padding">
+            <span>UserType:</span>
+            <input type="text" name="UserType" style="width:120px" />
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-success">Search</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-danger">Reset</button>
+        </div>
     </div>
 </div>
- 
+<div class="container">
+    <div class="row btn-add">
+        <a href="~/User/Add" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>
+    </div> 
     <table class="table table-striped">
         <tr>
             <td>Id</td>
@@ -85,6 +78,7 @@
             </tr>
         }
     </table>
+</div>
 <style>
     .btn-add{
         margin:10px;
@@ -98,5 +92,4 @@
             margin: 0;
             border:1px solid;
         }
-    
 </style>
