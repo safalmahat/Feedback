@@ -1,10 +1,12 @@
-﻿@model List<Feedback.DAL.Model.UserInfo>
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<string> rigths = (List<string>)Session["rights"];
+  
 }
 <hr />
+@Html.Partial("_AddUser")
 <div class="panel">
     <div class="panel-body">
         <div class="col-md-2 row-padding">
@@ -27,56 +29,71 @@
             <button class="btn btn-success">Search</button>
         </div>
         <div class="col-md-1">
-            <button class="btn btn-danger">Reset</button>
+            <button  class="btn btn-danger">Reset</button>
         </div>
     </div>
 </div>
 <div class="container">
+    <img src="~/UserPhoto/NewAdded.png" />
     <div class="row btn-add">
-        <a href="~/User/Add" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>
+        @*<a href="~/User/Add" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Add</span> </a>*@
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus">Add</span> </button>
+        <button class="btn btn-danger" id="btnReload"><span class="glyphicon glyphicon-refresh">Reload</span> </button>
     </div> 
-    <table class="table table-striped">
-        <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Address</td>
-            <td>Phone Number</td>
-            <td>Email</td>
-            <td>Gender</td>
-            <td>User Name</td>
-            <td>Password</td>
-            <td>User Type</td>
-            <td>Action</td>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <table id="tblUser" class="table table-striped">
+        <thead>
             <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Address</td>
-                <td>@item.PhoneNumber</td>
-                <td>@item.Email</td>
-                @if (item.Gender == true)
-                {
-                    <td>Male</td>
-                }
-                else
-                {
-                    <td>Female</td>
-                }
-                <td>@item.UserName</td>
-                <td>@item.Password</td>
-                <td>@item.UserRole.Name</td>
-                <td>
-                    <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
-                    @if (rigths.Contains("edit.course"))
-                    {
-                        <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
-                    }
-                    <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                </td>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Photo</td>
+                <td>Address</td>
+                <td>Phone Number</td>
+                <td>Email</td>
+                <td>Gender</td>
+                <td>User Name</td>
+                <td>Password</td>
+                <td>User Type</td>
+                <td>Action</td>
             </tr>
-        }
+        </thead>
+      
+        <tbody>
+          
+        </tbody>
+        @*@foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Email</td>
+            @if (item.Gender == true)
+            {
+                <td>Male</td>
+            }
+            else if (item.Gender == false)
+            {
+                <td>Female</td>
+            }
+            else
+            {
+                <td>Unknown</td>
+            }
+
+            <td>@item.UserName</td>
+            <td>@item.Password</td>
+            <td>@item.UserRole.Name</td>
+            <td>
+                <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button>
+                @if (rigths.Contains("edit.course"))
+                {
+                    <a href="~/User/Edit/@item.Id" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
+                }
+                <button  onclick="onDeleteClick(this)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+            </td>
+        </tr>
+        }*@
     </table>
 </div>
 <style>
@@ -93,3 +110,101 @@
             border:1px solid;
         }
 </style>
+<script>
+    $(document).ready(function () {
+
+        $("#btnSave").on("click", function () {
+            var file = document.getElementById("photo").files[0];
+            var formData = new FormData();
+            formData.append("PhotoPath", file);
+            var other_data = $('#frmUser').serializeArray();
+            $.each(other_data, function (key, input) {
+                formData.append(input.name, input.value);
+            });
+            $.ajax({
+                url: 'Add',
+                type: 'POST',
+                data: formData,
+                cache: false,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (resp) {
+                    debugger;
+                    if (resp == "True") {
+                        bootbox.alert("Data Added Successfully");
+                        $('#myModal').modal('hide');
+                        Reload();
+                    }
+                },
+                error: function (err) {
+
+                }
+            });
+        });
+        $("#btnReload").click(function () {
+            Reload();
+        });
+
+        function Reload() {
+            $("#tblUser tbody tr").remove();
+            $.ajax({
+                url: 'GetAllUser',
+                type: 'GET',
+                processData: false,
+                cache: false,
+                success: function (resp) {
+                    var data = JSON.parse(resp);
+                    $.each(data, function (i, item) {
+                        var rights = sessionStorage.rights.split(",")
+                        var actiontd = "<td>";
+                        if (rights.indexOf("edit.course") > -1) {
+                            actiontd = actiontd + ("<a href='~/User/Edit/item.Id' class='btn btn-primary btn-edit'><span class='glyphicon glyphicon-pencil'></span></a>");
+                        }
+                        actiontd = actiontd + ("<button  onclick='onDeleteClick(this)' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>");
+                        actiontd = actiontd + "</td>";
+                        var tr = '<tr><td>' + item.Id + '</td><td>' + item.Name + '</td><td><img width=40 height=40 src="'+item.PhotoPath+'"><img/></td>+<td>' + item.Address + '</td><td>' + item.PhoneNumber + '</td><td>' + item.Email + '</td><td>' + item.Gender + '</td><td>' + item.UserName + '</td><td>' + item.Password + '</td><td>' + item.UserRole.Name + '</td>' + actiontd + '</tr>';
+                        $("#tblUser tbody").append(tr);
+                    });
+                    if (!rigths.Contains("edit.course")) {
+                        $(".btn-edit").hide();
+                    }
+                },
+                error: function (err) {
+
+                }
+            });
+
+        }
+    });
+
+    function onDeleteClick(btn) {
+        window.btn = btn;
+        var id = parseInt(btn.parentElement.parentElement.children[0].innerText);
+        bootbox.confirm("Are you sure want to delete?", function (res) {
+            if (res == true) {
+                //delete
+                //call ajax request
+                $.ajax({
+                    url: 'Delete/' + id,
+                    type: 'GET',
+                    success: function (resp) {
+                        if (resp == "True") {
+                            btn.parentElement.parentElement.remove();
+                            bootbox.alert("Data Deleted Successfully");
+                        }
+                    },
+                    error: function (err) {
+
+                    }
+
+
+
+
+                });
+            }
+
+        });
+    }
+
+</script>

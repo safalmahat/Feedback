@@ -23,6 +23,7 @@ namespace Feedback.DAL.Model
         public string UserName { get; set; }
         public string Password { get; set; }
         public Nullable<int> UserTypeId { get; set; }
+        public string PhotoPath { get; set; }
     
         public virtual UserRole UserRole { get; set; }
     }

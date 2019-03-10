@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+
     <style>
         .panel.login-form {
             background-color: white;
@@ -39,7 +41,7 @@
                 <div class="text-center login-note"><strong>PLEASE LOGIN TO APP</strong></div>
                 <div class="text-center">Enter Your credentials to login.</div>
                 <div class="panel login-form">
-                    <form action="~/User/Login" method="post">
+                    <form id="frmLogin">
                         <div class="form-group">
                             <label for="email">UserName:</label>
                             <input class="form-control" type="text" name="UserName" value="" placeholder="admin" />
@@ -48,14 +50,14 @@
                         <div class="form-group">
                             <label for="password">Password:</label>
                             <input class="form-control" type="password" name="Password" value="" placeholder="Password" />
-                            <span>Your strong password</span>
+                            <label id="lblerror" class="text-danger"></label>
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox" name="name" value="" /><strong>Remember Me</strong></label>
 
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-success form-control">Login</button>
+                            <button id="btnLogin" type="button" class="btn btn-success form-control">Login</button>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-default form-control">Registration</button>
@@ -71,3 +73,31 @@
 
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $("#btnLogin").click(function () {
+            var data = $("#frmLogin").serialize();
+            $.ajax({
+                url: 'User/Login',
+                type: 'POST',
+                data: data,
+                success: function (resp) {
+                    if (resp.success) {
+                        sessionStorage.setItem("rights", resp.rights);
+                        window.location.href = "Home/Index";
+                        // bootbox.alert("Data Added Successfully");
+                    }
+                    else {
+                        $("#lblerror")[0].innerText = resp.message;
+                    }
+                },
+                error: function (err) {
+
+                }
+            });
+
+
+        });
+
+    });
+</script>

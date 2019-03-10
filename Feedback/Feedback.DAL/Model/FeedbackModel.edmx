@@ -86,6 +86,7 @@
           <Property Name="UserName" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="UserTypeId" Type="int" />
+          <Property Name="PhotoPath" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -399,6 +400,7 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserTypeId" Type="Int32" />
           <NavigationProperty Name="UserRole" Relationship="FeedBackModel.FK__UserInfo__UserTy__1B0907CE" FromRole="UserInfo" ToRole="UserRole" />
+          <Property Name="PhotoPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -602,6 +604,7 @@
           <EntitySetMapping Name="UserInfoes">
             <EntityTypeMapping TypeName="FeedBackModel.UserInfo">
               <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
                 <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />

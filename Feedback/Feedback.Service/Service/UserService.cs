@@ -14,6 +14,9 @@ namespace Feedback.Service.Service
         UserInfo Login(string userName, string password);
         List<RoleAndRightsInfo> GetRightsByRoleId(int? roleId);
         bool Insert(UserInfo item);
+        UserInfo GetUser(int id);
+        bool Edit(UserInfo item);
+        bool Delete(int id);
     }
     public class UserService: IUserService
     {
@@ -37,7 +40,24 @@ namespace Feedback.Service.Service
 
         public bool Insert(UserInfo item)
         {
+            if (item.Gender == null)
+                item.Gender = true;
             return _userRepo.Insert(item);
+        }
+
+        public UserInfo GetUser(int id)
+        {
+            return _userRepo.GetUser(id);
+        }
+
+        public bool Edit(UserInfo item)
+        {
+            return _userRepo.Edit(item);
+        }
+
+        public bool Delete(int id)
+        {
+            return _userRepo.Delete(id);
         }
     }
 }

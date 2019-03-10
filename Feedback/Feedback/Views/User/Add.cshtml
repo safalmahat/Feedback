@@ -7,7 +7,8 @@
 <hr />
 
     <div class="panel panel-default" style="padding:10px;">
-        <form method="post">
+        <form method="post" action="~/User/Add">
+            @Html.HiddenFor(x => x.Id)
             <div class="form-group row">
                 <label for="staticEmail" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-9">
@@ -19,20 +20,22 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label">Address</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="Address" name="Address">
+                    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
 
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label">Phone Number</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber">
+                    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+                    @*<input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber">*@
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="Email" name="Email">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    @*<input type="email" class="form-control" id="Email" name="Email">*@
                 </div>
             </div>
             <div class="form-group row">
@@ -40,23 +43,25 @@
                 <div class="col-sm-9">
                     @*<input type="text" class="form-control" id="Gender" name="Gender">*@
                     Male
-                    @Html.RadioButtonFor(model => model.Gender, "Female")
+                    @Html.RadioButtonFor(model => model.Gender, "True")
                     Female
-                    @Html.RadioButtonFor(model => model.Gender, "Male")
+                    @Html.RadioButtonFor(model => model.Gender, "False")
                 </div>
 
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label">UserName</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="UserName" name="UserName">
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                    @*<input type="text" class="form-control" id="UserName" name="UserName">*@
                     @Html.ValidationMessageFor(x => x.UserName, null, new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="Password" name="Password">
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                    @*<input type="text" class="form-control" id="Password" name="Password">*@
                 </div>
             </div>
             <div class="form-group row">
@@ -74,7 +79,16 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-3 col-form-label"></label>
                 <div class="col-sm-9">
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-saved">Save</span></button>
+                    @if (Model==null)
+                    {
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-saved">Save</span></button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-saved">Update</span></button>
+
+                    }
+
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-refresh">Reset</span></button>
                 </div>
             </div>
