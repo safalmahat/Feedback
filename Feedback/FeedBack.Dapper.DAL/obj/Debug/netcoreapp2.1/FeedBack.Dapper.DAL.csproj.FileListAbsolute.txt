@@ -1,0 +1,8 @@
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\bin\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.deps.json
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\bin\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\bin\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.pdb
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\obj\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.csproj.CoreCompileInputs.cache
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\obj\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.AssemblyInfoInputs.cache
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\obj\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.AssemblyInfo.cs
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\obj\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\FeedBack.Dapper.DAL\obj\Debug\netcoreapp2.1\FeedBack.Dapper.DAL.pdb

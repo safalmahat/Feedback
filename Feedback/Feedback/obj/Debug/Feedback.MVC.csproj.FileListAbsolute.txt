@@ -109,3 +109,5 @@ D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\obj\Debug\Feedback.MVC.cspro
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\obj\Debug\Feedback.MVC.csproj.CopyComplete
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\obj\Debug\Feedback.dll
 D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\obj\Debug\Feedback.pdb
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\bin\Dapper.dll
+D:\NeoSphare\NeoFeedback\Feedback\Feedback\Feedback\bin\Dapper.xml

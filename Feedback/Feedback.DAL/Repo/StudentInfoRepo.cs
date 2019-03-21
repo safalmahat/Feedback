@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Feedback.DAL.Model;
+using Dapper;
 
 namespace Feedback.DAL.Repo
 {
@@ -17,9 +19,10 @@ namespace Feedback.DAL.Repo
         public List<StudentInfo> GetAllStudentInfo()
         {
             List<StudentInfo> lst = new List<StudentInfo>();
-            using (FeedBackEntities _entities = new FeedBackEntities())
+            using (var _entities = new SqlConnection("Server=.;Database=FeedBack;Trusted_Connection=True;"))
             {
-                lst = _entities.StudentInfoes.Include("CourseInfo").Include("TeacherInfo").ToList();
+
+                lst = _entities.Query<StudentInfo>("select * from StudentInfo").ToList();
             }
             return lst;
         }
